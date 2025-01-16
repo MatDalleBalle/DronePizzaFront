@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Pizza Management</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<main>
+    <header>
+        <h1>Drone Pizza Management</h1>
+    </header>
+
+    <section id="drones">
+        <h2>Drones</h2>
+        <ul id="drone-list"></ul>
+
+        <!-- Drone actions -->
+        <div>
+            <button id="add-drone-btn" class="btn primary">Create New Drone</button>
+            <button id="enable-drone-btn" class="btn">Enable Drone</button>
+            <button id="disable-drone-btn" class="btn">Disable Drone</button>
+            <button id="retire-drone-btn" class="btn">Retire Drone</button>
+        </div>
+    </section>
+
+    <section id="deliveries">
+        <h2>Undelivered Deliveries</h2>
+        <ul id="delivery-list"></ul>
+
+        <!-- Form to assign drone to a delivery -->
+        <form id="assign-drone-form">
+            <h3>Assign Drone to Delivery</h3>
+            <input type="number" id="delivery-id" placeholder="Enter Delivery ID" required>
+            <input type="number" id="drone-id" placeholder="Enter Drone ID" required>
+            <button id="assign-drone-btn" class="btn primary">Assign Drone</button>
+        </form>
+
+        <button id="simulate-delivery-btn" class="btn primary">Simulate New Delivery</button>
+    </section>
+
+</main>
+
+<script src="../static/js/script.js"></script>
+</body>
+</html>
