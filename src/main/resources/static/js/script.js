@@ -22,7 +22,7 @@ async function fetchUndeliveredDeliveries() {
     deliveryList.innerHTML = deliveries.map(delivery => `
         <li>
             <div>
-                ID: ${delivery.id}, Address: ${delivery.adresse}, Assigned Drone: ${delivery.droneId || 'None'}
+                ID: ${delivery.id}, Address: ${delivery.adresse}, Pizza Ordered: ${delivery.pizza ? delivery.pizza.titel : 'none'} Assigned Drone: ${delivery.drone ? delivery.drone.id : 'None'}
             </div>
         </li>
     `).join('');
@@ -78,7 +78,7 @@ document.getElementById('assign-drone-form').addEventListener('submit', async (e
 
 // Simulate new delivery
 document.getElementById('simulate-delivery-btn').addEventListener('click', async () => {
-    const pizzaId = Math.floor(Math.random() * 10);  // Random pizza ID for demo
+    const pizzaId = Math.floor(Math.random() * 5)+1;  // Random pizza ID for demo
     const address = `Street ${Math.floor(Math.random() * 100)}`;
     await fetch(`${baseURL}/deliveries/add?pizzaId=${pizzaId}&adresse=${address}`, { method: 'POST' });
     fetchUndeliveredDeliveries();
